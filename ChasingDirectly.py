@@ -82,7 +82,7 @@ def Chasing(policy_sheep,w=600,h=600,speed=1,time=1000):
     for i in range(time):
         screen=pygame.display.set_mode([w,h])
         action_sheep = ActionofSheep(position['sheep'][-1],position['wolf'][-1],policy_sheep,speed)
-        action_wolf = ActionofWolf(position['sheep'][-5],position['wolf'][-1],speed,subtlety=30)
+        action_wolf = ActionofWolf(position['sheep'][-1],position['wolf'][-1],speed,subtlety=30)
         position_sheep = list(np.add(position['sheep'][-1],action_sheep))
         position_wolf = map(np.int,list(np.round(np.add(position['wolf'][-1],action_wolf))))
         position['sheep'].append(position_sheep)
