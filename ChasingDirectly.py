@@ -90,10 +90,10 @@ def Chasing(policy_sheep,w=600,h=600,speed=1,time=1000):
         screen.fill([0,0,0])
         drawpositionsheep = list(np.multiply(position['sheep'][-1],20))
         drawpositionwolf = list(np.multiply(position['wolf'][-1],20))
-        print drawpositionsheep,drawpositionwolf,action_wolf
+        # print drawpositionsheep,drawpositionwolf,action_wolf
         pygame.draw.circle(screen,color_sheep,drawpositionsheep,circleR)
         pygame.draw.circle(screen,color_wolf,drawpositionwolf,circleR)
-        pygame.display.flip()
+        pygame.display.update()
         pygame.time.wait(100)
     pygame.quit()
     return position
